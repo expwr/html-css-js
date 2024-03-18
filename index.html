@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magic 8-ball</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        #saying {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="userPrompt" placeholder="Enter your prompt">
+        <button id="sayingButton">Get your FATE</button>
+        <p id="saying"></p>
+    </div>
+
+    <script>
+        document.getElementById('sayingButton').addEventListener('click', function() {
+            var sayings = ["Yes", "No", "Something big will come to you soon", "Maybe", "Good things are coming"];
+            var randomSayings = sayings[Math.floor(Math.random() * sayings.length)];
+            document.getElementById('saying').textContent = randomSayings;
+        });
+    </script>
+</body>
+</html>
